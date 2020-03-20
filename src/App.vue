@@ -2,9 +2,10 @@
 	<div id="app">
 		<div id="nav">
 			<ul>
-				<router-link to="/" tag="li"><a>Home</a></router-link>
-				<router-link to="/about" tag="li"><a>About</a></router-link>
-				<router-link to="/my-vue" tag="li"><a>MyVue</a></router-link>
+				<router-link to="/" tag="li" exact-active-class="router-link-exact-active"><a>Home</a></router-link>
+				<router-link to="/about/1" tag="li"><a>About 1</a></router-link>
+				<router-link to="/about/2" tag="li"><a>About 2</a></router-link>
+				<router-link :to="{ name: 'MyVue' }" tag="li"><a>MyVue</a></router-link>
 			</ul>
 		</div>
 		<router-view />
