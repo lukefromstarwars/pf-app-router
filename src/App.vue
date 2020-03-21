@@ -1,36 +1,38 @@
 <template>
-	<div id="app">
-		<div id="nav">
-			<ul>
-				<router-link to="/" tag="li" exact-active-class="router-link-exact-active"><a>Home</a></router-link>
-				<router-link to="/about/1" tag="li"><a>About 1</a></router-link>
-				<router-link to="/about/2" tag="li"><a>About 2</a></router-link>
-				<router-link :to="{ name: 'MyVue' }" tag="li"><a>MyVue</a></router-link>
-			</ul>
-		</div>
-		<router-view />
-	</div>
+	<v-app>
+		<v-app-bar app color="primary" dark>
+			<div class="d-flex align-center">
+				<v-img alt="Vuetify Logo" class="shrink mr-2" contain src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png" transition="scale-transition" width="40" />
+
+				<v-img alt="Vuetify Name" class="shrink mt-1 hidden-sm-and-down" contain min-width="100" src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png" width="100" />
+			</div>
+
+			<v-spacer></v-spacer>
+
+			<v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
+				<span class="mr-2">Latest Release</span>
+				<v-icon>mdi-open-in-new</v-icon>
+			</v-btn>
+		</v-app-bar>
+
+		<v-content>
+			<HelloWorld />
+		</v-content>
+	</v-app>
 </template>
 
-<style>
-#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-}
+<script>
+import HelloWorld from './components/HelloWorld';
 
-#nav {
-	padding: 30px;
-}
+export default {
+	name: 'App',
 
-#nav a {
-	font-weight: bold;
-	color: #2c3e50;
-}
+	components: {
+		HelloWorld
+	},
 
-#nav a.router-link-exact-active {
-	color: #42b983;
-}
-</style>
+	data: () => ({
+		//
+	})
+};
+</script>
